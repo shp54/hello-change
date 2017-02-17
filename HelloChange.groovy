@@ -43,26 +43,12 @@ def main(){
 				println register
 				break
 			case "put":
-				if(args.size() < register.cash.keys().size()){
-					println "You haven't specified the right amount to put in the register"
-				} else {
-					args = args.collect { it as Integer } //Cast all arguments to integers
-					register.put(
-						twenties: args[0],
-						tens: args[1],
-						fives: args[2],
-						twos: args[3],
-						ones: args[4],
-					)
-				}
-				println register //Show end state of the register
-				break
 			case "take":
-				if(args.size() < register.cash.keys().size()){
-					println "You haven't specified the right amount to take from the register"
+				if(args.size() < register.cash.size()){
+					println "You haven't specified the right amount of arguments"
 				} else {
 					args = args.collect { it as Integer } //Cast all arguments to integers
-					register.take(
+					register."$command"(
 						twenties: args[0],
 						tens: args[1],
 						fives: args[2],
