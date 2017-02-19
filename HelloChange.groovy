@@ -64,7 +64,7 @@ class Register {
 			def bill = denominations.pop() //Get largest unexamined bill 
 			if((bill * cash[bill]) >= amountToGet){ //If we have more than enough change, take as much as we need
 				def billsToGet = Math.floor(amountToGet/bill) as Integer
-				change.put(bill, Math.floor(amountToGet/bill) as Integer)
+				change.put(bill, billsToGet)
 				amountToGet -= (bill * billsToGet)
 			} else { //Otherwise, take every bill in the register and move on to the next smaller bill
 				change.put(bill, cash[bill]) 
