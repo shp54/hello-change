@@ -57,7 +57,7 @@ class Register {
 		
 		while(!denominations.empty){ //Check every kind of bill that could make change
 			def totalChange = calcTotal(change)
-			if(totalChange == amount){
+			if(totalChange == amount){ //Exit loop if we have enough change already
 				return change
 			}
 		
